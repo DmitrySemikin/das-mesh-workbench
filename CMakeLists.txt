@@ -29,14 +29,17 @@ endif (NOT TARGET Qt5::Widgets OR NOT TARGET Qt5::Gui)
 set (
     SOURCES
     src/main.cxx
+    src/MainWindow.cxx
 )
 
 set (
     HEADERS
+    src/MainWindow.hxx
 )
 
 set (
     UIS
+    src/MainWindow.ui
 )
 
 set (
@@ -47,13 +50,6 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-source_group(
-    "Resources"
-    FILES
-    ${UIS}
-    ${QRCS}
-)
-
 add_executable(
     das-mesh-workbench
     ${SOURCES}
@@ -61,6 +57,8 @@ add_executable(
     ${UIS}
     ${QRCS}
 )
+
+
 
 target_link_libraries(
     das-mesh-workbench
