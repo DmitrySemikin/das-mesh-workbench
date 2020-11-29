@@ -17,6 +17,9 @@ private slots:
     virtual void slotExit();
 
 private:
+    void create3dText();
+
+private:
     Ui_MainWindow * ui;
 };
 

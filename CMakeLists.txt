@@ -7,6 +7,7 @@ find_package(
         CommonCore
         GUISupportQt
         ViewsQt
+        RenderingFreeType
 )
 
 if (NOT VTK_FOUND)
