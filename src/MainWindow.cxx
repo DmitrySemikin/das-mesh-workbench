@@ -5,6 +5,9 @@
 MainWindow::MainWindow() {
     ui = new Ui_MainWindow();
     ui->setupUi(this);
+
+    connect(this->ui->actionQuit, SIGNAL(triggered()), this, SLOT(slotExit()));
+
 }
 
 MainWindow::~MainWindow() {
@@ -12,4 +15,8 @@ MainWindow::~MainWindow() {
         delete ui;
         ui = nullptr;
     }
+}
+
+void MainWindow::slotExit() {
+    qApp->exit();
 }

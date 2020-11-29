@@ -11,7 +11,10 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow();
-    ~MainWindow();
+    virtual ~MainWindow() override;
+
+private slots:
+    virtual void slotExit();
 
 private:
     Ui_MainWindow * ui;
