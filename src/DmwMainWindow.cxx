@@ -6,12 +6,12 @@
 #include <vtkRenderer.h>
 #include <vtkVectorText.h>
 
-#include "ui_MainWindow.h"
+#include "ui_DmwMainWindow.h"
 
-#include "MainWindow.hxx"
+#include "DmwMainWindow.hxx"
 
-MainWindow::MainWindow() {
-    ui = new Ui_MainWindow();
+DmwMainWindow::DmwMainWindow() {
+    ui = new Ui_DmwMainWindow();
     ui->setupUi(this);
 
     create3dText();
@@ -19,18 +19,18 @@ MainWindow::MainWindow() {
     connect(this->ui->actionQuit, SIGNAL(triggered()), this, SLOT(slotExit()));
 }
 
-MainWindow::~MainWindow() {
+DmwMainWindow::~DmwMainWindow() {
     if (ui != nullptr) {
         delete ui;
         ui = nullptr;
     }
 }
 
-void MainWindow::slotExit() {
+void DmwMainWindow::slotExit() {
     qApp->exit();
 }
 
-void MainWindow::create3dText() {
+void DmwMainWindow::create3dText() {
     // This code mostly follows SimpleView example from "vtk/Examples/Gui/Qt/SimpleExample"
     vtkNew<vtkVectorText> vectorText;
     vectorText->SetText("DAS-Mesh-Workbench");

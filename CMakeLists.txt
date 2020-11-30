@@ -30,17 +30,17 @@ endif (NOT TARGET Qt5::Widgets OR NOT TARGET Qt5::Gui)
 set (
     SOURCES
     src/main.cxx
-    src/MainWindow.cxx
+    src/DmwMainWindow.cxx
 )
 
 set (
     HEADERS
-    src/MainWindow.hxx
+    src/DmwMainWindow.hxx
 )
 
 set (
     UIS
-    src/MainWindow.ui
+    src/DmwMainWindow.ui
 )
 
 set (

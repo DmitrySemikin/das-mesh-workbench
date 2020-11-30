@@ -3,7 +3,7 @@
 
 #include <QVTKOpenGLStereoWidget.h>
 
-#include "MainWindow.hxx"
+#include "DmwMainWindow.hxx"
 
 int main(int argc, char ** argv) {
 
@@ -13,7 +13,7 @@ int main(int argc, char ** argv) {
 
     QApplication application(argc, argv);
 
-    MainWindow mainWindow;
+    DmwMainWindow mainWindow;
     mainWindow.show();
 
     return application.exec();
