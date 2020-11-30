@@ -30,11 +30,13 @@ endif (NOT TARGET Qt5::Widgets OR NOT TARGET Qt5::Gui)
 set (
     SOURCES
     src/main.cxx
+    src/core/DmwApplication.cxx
     src/DmwMainWindow.cxx
 )
 
 set (
     HEADERS
+    src/core/DmwApplication.hxx
     src/DmwMainWindow.hxx
 )
 
@@ -58,8 +60,6 @@ add_executable(
     ${UIS}
     ${QRCS}
 )
-
-
 
 target_link_libraries(
     das-mesh-workbench
