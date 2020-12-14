@@ -32,12 +32,16 @@ set (
     src/main.cxx
     src/core/DmwApplication.cxx
     src/DmwMainWindow.cxx
+    src/DmwModel.cxx
+    src/DmwViewer.cxx
 )
 
 set (
     HEADERS
     src/core/DmwApplication.hxx
     src/DmwMainWindow.hxx
+    src/DmwModel.hxx
+    src/DmwViewer.hxx
 )
 
 set (
