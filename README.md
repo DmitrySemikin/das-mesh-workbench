@@ -1,1 +1,3 @@
 # das-mesh-workbench
+
+Currently this project can hardly provide any interesting functionality to anyone...
