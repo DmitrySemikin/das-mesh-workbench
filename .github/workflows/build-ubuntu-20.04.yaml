@@ -12,5 +12,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Build
-        run: echo "Executing build script..."
+        run: bash scripts/build-on-clean-os-ubuntu-20.04.sh
       # TODO: Upload artifacts
