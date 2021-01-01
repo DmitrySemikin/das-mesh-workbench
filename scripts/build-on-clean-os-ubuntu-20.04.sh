@@ -40,6 +40,7 @@ sudo apt-get update \
     g++ \
     cmake \
     ninja-build \
+    libgl1-mesa-dev \
     qtbase5-dev
 
 rc=$?
@@ -57,7 +58,7 @@ fi
 downloadStartTime=$(date +%s)
 
 cd "${workingDir}" \
-&& wget "https://github.com/DmitrySemikin/vtk-mirror/releases/download/dasmw-depends_vtk-9.0.1/daswb-depends_vtk-9.0.1_ubuntu-20.04.tar.gz"
+&& wget --no-verbose "https://github.com/DmitrySemikin/vtk-mirror/releases/download/dasmw-depends_vtk-9.0.1/daswb-depends_vtk-9.0.1_ubuntu-20.04.tar.gz"
 rc=$?
 
 downloadEndTime=$(date +%s)
