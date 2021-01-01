@@ -1,0 +1,16 @@
+name: build-ubuntu-20.04
+
+on: workflow_dispatch
+#on: push
+
+jobs:
+
+  build-main:
+    name: Build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build
+        run: echo "Executing build script..."
+      # TODO: Upload artifacts
