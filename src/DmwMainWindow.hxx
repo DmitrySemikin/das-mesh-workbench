@@ -14,16 +14,11 @@ class DmwMainWindow : public QMainWindow
 
 public:
     explicit DmwMainWindow();
-    ~DmwMainWindow() noexcept override;
 
     void setViewerRenderWindow(vtkGenericOpenGLRenderWindow * renderWindow);
 
 private slots:
     virtual void slotExit();
-
-private:
-    // TODO: Remove this
-    void create3dText();
 
 private:
     std::unique_ptr<Ui_DmwMainWindow> ui;
