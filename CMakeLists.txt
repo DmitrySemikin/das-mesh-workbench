@@ -22,31 +22,31 @@ find_package(
 )
 
 if (NOT TARGET Qt5::Widgets OR NOT TARGET Qt5::Gui)
-    error()
+    message(FATAL_ERROR "Cannot find Qt5")
 endif (NOT TARGET Qt5::Widgets OR NOT TARGET Qt5::Gui)
 
 #################
 
 set (
     SOURCES
-    src/main.cxx
-    src/core/DmwApplication.cxx
-    src/DmwMainWindow.cxx
-    src/DmwModel.cxx
-    src/DmwViewer.cxx
+        src/main.cxx
+        src/DmwApplication.cxx
+        src/DmwMainWindow.cxx
+        src/DmwModel.cxx
+        src/DmwViewer.cxx
 )
 
 set (
     HEADERS
-    src/core/DmwApplication.hxx
-    src/DmwMainWindow.hxx
-    src/DmwModel.hxx
-    src/DmwViewer.hxx
+        src/DmwApplication.hxx
+        src/DmwMainWindow.hxx
+        src/DmwModel.hxx
+        src/DmwViewer.hxx
 )
 
 set (
     UIS
-    src/DmwMainWindow.ui
+        src/DmwMainWindow.ui
 )
 
 set (
@@ -68,7 +68,7 @@ add_executable(
 target_link_libraries(
     das-mesh-workbench
     PRIVATE
-    ${VTK_LIBRARIES}
-    Qt5::Gui
-    Qt5::Widgets
+        ${VTK_LIBRARIES}
+        Qt5::Gui
+        Qt5::Widgets
 )

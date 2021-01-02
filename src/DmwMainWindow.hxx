@@ -11,7 +11,7 @@ class DmwMainWindow : public QMainWindow
 
 public:
     DmwMainWindow();
-    virtual ~DmwMainWindow() override;
+    ~DmwMainWindow() override;
 
 private slots:
     virtual void slotExit();

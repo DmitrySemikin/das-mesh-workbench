@@ -5,7 +5,7 @@
 
 #include <QVTKOpenGLStereoWidget.h>
 
-#include "../DmwMainWindow.hxx"
+#include "DmwMainWindow.hxx"
 
 #include "DmwApplication.hxx"
 

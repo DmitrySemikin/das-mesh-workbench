@@ -3,7 +3,7 @@
 
 #include <QVTKOpenGLStereoWidget.h>
 
-#include "core/DmwApplication.hxx"
+#include "DmwApplication.hxx"
 #include "DmwMainWindow.hxx"
 
 int main(int argc, char ** argv) {
