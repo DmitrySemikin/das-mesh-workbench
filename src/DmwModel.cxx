@@ -1,8 +1,6 @@
+#include <vtkElevationFilter.h>
 #include <vtkNew.h>
 #include <vtkVectorText.h>
-#include <vtkElevationFilter.h>
-#include <vtkPolyDataMapper.h>
-
 
 #include "DmwModel.hxx"
 
@@ -37,6 +35,6 @@ DmwModel::DmwModel() {
     // Add GUI for creating and deleting objects.
 }
 
-DmwModel::~DmwModel() {
+DmwModel::~DmwModel() noexcept {
     // Nothing to do
 }

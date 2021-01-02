@@ -4,8 +4,8 @@
 class DmwModel {
 
 public:
-    DmwModel();
-    ~DmwModel();
+    explicit DmwModel();
+    ~DmwModel() noexcept;
 
 };
 

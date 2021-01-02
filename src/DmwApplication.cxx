@@ -5,7 +5,7 @@
 
 #include <QVTKOpenGLStereoWidget.h>
 
-#include "DmwMainWindow.hxx"
+#include "DmwKernel.hxx"
 
 #include "DmwApplication.hxx"
 
@@ -22,14 +22,14 @@ DmwApplication::DmwApplication(int argc, char ** argv)
     qApplication = make_unique<QApplication>(argc, argv);
 }
 
-DmwApplication::~DmwApplication() {
+DmwApplication::~DmwApplication() noexcept {
     // Nothing to do yet
 }
 
 int DmwApplication::exec() {
 
-    DmwMainWindow mainWindow;
-    mainWindow.show();
+    DmwKernel kernel;
+    kernel.showMainWindow();
 
     return qApplication->exec();
 }

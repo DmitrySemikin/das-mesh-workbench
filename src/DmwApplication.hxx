@@ -8,14 +8,13 @@ class QApplication;
 class DmwApplication {
 
 public:
-    DmwApplication(int argc, char ** argv);
-    ~DmwApplication();
+    explicit DmwApplication(int argc, char ** argv);
+    ~DmwApplication() noexcept;
 
     int exec();
 
 private:
     std::unique_ptr<QApplication> qApplication;
-
 };
 
 #endif // core_DmwApplication_hxx

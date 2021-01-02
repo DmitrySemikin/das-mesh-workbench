@@ -35,16 +35,22 @@ set (
     SOURCES
         src/main.cxx
         src/DmwApplication.cxx
+        src/DmwGuiKernel.cxx
+        src/DmwKernel.cxx
         src/DmwMainWindow.cxx
         src/DmwModel.cxx
+        src/DmwText3dGenerator.cxx
         src/DmwViewer.cxx
 )
 
 set (
     HEADERS
         src/DmwApplication.hxx
+        src/DmwGuiKernel.hxx
+        src/DmwKernel.hxx
         src/DmwMainWindow.hxx
         src/DmwModel.hxx
+        src/DmwText3dGenerator.hxx
         src/DmwViewer.hxx
 )
 

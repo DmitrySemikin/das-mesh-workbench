@@ -1,3 +1,6 @@
+#include <memory>
+
+// TODO: Remove unused includes
 #include <vtkActor.h>
 #include <vtkElevationFilter.h>
 #include <vtkGenericOpenGLRenderWindow.h>
@@ -10,26 +13,29 @@
 
 #include "DmwMainWindow.hxx"
 
-DmwMainWindow::DmwMainWindow() {
-    ui = new Ui_DmwMainWindow();
+using std::make_unique;
+
+DmwMainWindow::DmwMainWindow()
+: ui(nullptr)
+{
+    ui = make_unique<Ui_DmwMainWindow>();
     ui->setupUi(this);
 
-    create3dText();
+    // TODO: Remove this
+//    create3dText();
 
     connect(this->ui->actionQuit, SIGNAL(triggered()), this, SLOT(slotExit()));
 }
 
-DmwMainWindow::~DmwMainWindow() {
-    if (ui != nullptr) {
-        delete ui;
-        ui = nullptr;
-    }
+DmwMainWindow::~DmwMainWindow() noexcept {
+    // Nothing to do here
 }
 
 void DmwMainWindow::slotExit() {
     qApp->exit();
 }
 
+// TODO: Remove this
 void DmwMainWindow::create3dText() {
     // This code mostly follows SimpleView example from "vtk/Examples/Gui/Qt/SimpleExample"
     vtkNew<vtkVectorText> vectorText;
@@ -51,5 +57,9 @@ void DmwMainWindow::create3dText() {
     vtkNew<vtkGenericOpenGLRenderWindow> renderWindow;
     renderWindow->AddRenderer(renderer);
 
+    this->ui->viewer->setRenderWindow(renderWindow);
+}
+
+void DmwMainWindow::setViewerRenderWindow(vtkGenericOpenGLRenderWindow *renderWindow) {
     this->ui->viewer->setRenderWindow(renderWindow);
 }
