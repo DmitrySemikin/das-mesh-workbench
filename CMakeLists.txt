@@ -11,7 +11,7 @@ find_package(
 )
 
 if (NOT VTK_FOUND)
-    error()
+    message(FATAL_ERROR "Cannot find VTK")
 endif (NOT VTK_FOUND)
 
 find_package(
