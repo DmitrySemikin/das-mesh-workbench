@@ -25,6 +25,10 @@ if (NOT TARGET Qt5::Widgets OR NOT TARGET Qt5::Gui)
     message(FATAL_ERROR "Cannot find Qt5")
 endif (NOT TARGET Qt5::Widgets OR NOT TARGET Qt5::Gui)
 
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
 #################
 
 set (
@@ -52,10 +56,6 @@ set (
 set (
     QRCS
 )
-
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTORCC ON)
 
 add_executable(
     das-mesh-workbench
