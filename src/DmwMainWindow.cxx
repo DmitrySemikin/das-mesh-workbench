@@ -15,6 +15,10 @@ DmwMainWindow::DmwMainWindow()
     connect(this->ui->actionQuit, SIGNAL(triggered()), this, SLOT(slotExit()));
 }
 
+DmwMainWindow::~DmwMainWindow() noexcept {
+    // Nothing to do here.
+}
+
 void DmwMainWindow::slotExit() {
     qApp->exit();
 }

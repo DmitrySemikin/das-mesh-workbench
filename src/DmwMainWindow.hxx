@@ -14,6 +14,7 @@ class DmwMainWindow : public QMainWindow
 
 public:
     explicit DmwMainWindow();
+    ~DmwMainWindow() noexcept override;
 
     void setViewerRenderWindow(vtkGenericOpenGLRenderWindow * renderWindow);
 
