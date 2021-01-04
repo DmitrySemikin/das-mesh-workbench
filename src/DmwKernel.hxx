@@ -4,6 +4,7 @@
 #include <memory>
 
 class DmwGuiKernel;
+class DmwModel;
 class DmwViewer;
 
 class DmwKernel {
@@ -15,8 +16,9 @@ public:
     void showMainWindow();
 
 private:
-    std::unique_ptr<DmwViewer> viewer;
+    std::shared_ptr<DmwViewer> viewer;
     std::unique_ptr<DmwGuiKernel> guiKernel;
+    std::unique_ptr<DmwModel> model;
 };
 
 

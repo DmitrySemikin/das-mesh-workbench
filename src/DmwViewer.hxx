@@ -9,6 +9,8 @@ class vtkActor;
 class vtkRenderer;
 class vtkGenericOpenGLRenderWindow;
 
+class DmwModel;
+
 class DmwViewer {
 
 public:
@@ -17,6 +19,7 @@ public:
 
     void setDataSet(vtkSmartPointer<vtkDataSet> newDataSet);
     vtkGenericOpenGLRenderWindow * getRenderWindow();
+    void onDataSetUpdated(DmwModel const & model);
 
 private:
     vtkSmartPointer<vtkDataSet> dataSet;
