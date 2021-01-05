@@ -45,6 +45,7 @@ set (
 
 set (
     HEADERS
+        src/DmwActionCallback.hxx
         src/DmwApplication.hxx
         src/DmwGuiKernel.hxx
         src/DmwKernel.hxx

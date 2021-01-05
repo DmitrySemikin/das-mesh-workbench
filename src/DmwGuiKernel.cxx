@@ -23,3 +23,7 @@ void DmwGuiKernel::setViewerRenderWindow(vtkGenericOpenGLRenderWindow * renderWi
 void DmwGuiKernel::showMainWindow() {
     mainWindow->show();
 }
+
+void DmwGuiKernel::registerAction(const DmwActionCallback &callback, const char *const actionName) {
+    // TODO: Not implemented yet.
+}
