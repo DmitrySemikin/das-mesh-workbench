@@ -62,6 +62,7 @@ set (
 
 set (
     QRCS
+        res/application.qrc
 )
 
 add_executable(

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="root">
+    <file>application/icons/open_48.png</file>
+    <file>application/icons/quit_48.png</file>
+  </qresource>
+</RCC>
