@@ -1,11 +1,55 @@
+#include <map>
 #include <memory>
+#include <string>
 
+#include <QAction>
+#include <QMenuBar>
+
+#include "DmwActionCallback.hxx"
 #include "DmwMainWindow.hxx"
 
 #include "DmwGuiKernel.hxx"
 
 using std::make_shared;
 using std::make_unique;
+using std::map;
+using std::move;
+using std::pair;
+using std::shared_ptr;
+using std::string;
+using std::unique_ptr;
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+namespace {
+    class DmwActionAndCallback {
+    public:
+        const string name;
+        DmwActionCallback const & callback;
+        shared_ptr<QAction> action;
+
+        DmwActionAndCallback(
+                char const * const name,
+                DmwActionCallback const & callback,
+                shared_ptr<QAction> action
+        ) : name(name),
+            callback(callback),
+            action(action)
+        {
+            // Nothing to do here.
+        }
+
+        DmwActionAndCallback(DmwActionAndCallback const & other)
+        : name(other.name),
+          callback(other.callback),
+          action(other.action)
+        {
+            // Nothing to do here
+        }
+    };
+}
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -24,7 +68,8 @@ public:
     void registerAction(DmwActionCallback const & callback, char const * const actionName);
 
 private:
-    std::shared_ptr<DmwMainWindow> mainWindow;
+    shared_ptr<DmwMainWindow> mainWindow;
+    map<string, DmwActionAndCallback> registeredActions;
 };
 
 
@@ -32,7 +77,8 @@ private:
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 DmwGuiKernel_Impl::DmwGuiKernel_Impl()
-        : mainWindow(make_shared<DmwMainWindow>())
+: mainWindow(make_shared<DmwMainWindow>()),
+  registeredActions()
 {
     // Nothing to do yet
 }
@@ -50,7 +96,17 @@ void DmwGuiKernel_Impl::showMainWindow() {
 }
 
 void DmwGuiKernel_Impl::registerAction(const DmwActionCallback &callback, const char *const actionName) {
-    // TODO: Not implemented yet.
+    if (registeredActions.find(actionName) != registeredActions.end()) {
+        // Action with this name is already registered.
+        // TODO: We need to return something in this case.
+        return;
+    }
+
+    // Don't we have here a problem, that the action may be deleted by both: parent (mainWindow) and by owning shared_ptr?
+    shared_ptr<QAction> action = make_shared<QAction>(actionName, mainWindow.get());
+    mainWindow->addMeshAction(*action);
+    QObject::connect(action.get(), &QAction::triggered, &callback, &DmwActionCallback::call);
+    registeredActions.insert(pair<string, DmwActionAndCallback>(actionName, DmwActionAndCallback(actionName, callback, action)));
 }
 
 

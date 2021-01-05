@@ -3,6 +3,7 @@
 
 #include <memory>
 
+#include <QAction>
 #include <QMainWindow>
 
 class vtkGenericOpenGLRenderWindow;
@@ -17,6 +18,7 @@ public:
     ~DmwMainWindow() noexcept override;
 
     void setViewerRenderWindow(vtkGenericOpenGLRenderWindow * renderWindow);
+    void addMeshAction(QAction & action);
 
 private slots:
     virtual void slotExit();

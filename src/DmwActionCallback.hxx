@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-class DmwActionCallback : QObject {
+class DmwActionCallback : public QObject {
 
     Q_OBJECT
 

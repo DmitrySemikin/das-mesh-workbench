@@ -24,5 +24,9 @@ void DmwMainWindow::slotExit() {
 }
 
 void DmwMainWindow::setViewerRenderWindow(vtkGenericOpenGLRenderWindow * renderWindow) {
-    this->ui->viewer->setRenderWindow(renderWindow);
+    ui->viewer->setRenderWindow(renderWindow);
+}
+
+void DmwMainWindow::addMeshAction(QAction & action) {
+    ui->menuActions->addAction(&action);
 }
