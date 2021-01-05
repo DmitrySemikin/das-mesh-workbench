@@ -7,6 +7,8 @@ class vtkGenericOpenGLRenderWindow;
 class DmwActionCallback;
 class DmwMainWindow;
 
+class DmwGuiKernel_Impl;
+
 class DmwGuiKernel {
 
 public:
@@ -20,7 +22,7 @@ public:
     void registerAction(DmwActionCallback const & callback, char const * const actionName);
 
 private:
-    std::shared_ptr<DmwMainWindow> mainWindow;
+    std::unique_ptr<DmwGuiKernel_Impl> impl;
 };
 
 #endif //DmwGuiKernel_hxx
