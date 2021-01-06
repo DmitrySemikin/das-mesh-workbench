@@ -19,7 +19,7 @@ public:
     void showMainWindow();
 
     // TODO: It is temporary solution. More sophisticated registration mechanism is needed.
-    void registerAction(DmwActionCallback const & callback, char const * const actionName);
+    void registerAction(std::shared_ptr<const DmwActionCallback> callback, char const * const actionName);
 
 private:
     std::unique_ptr<DmwGuiKernel_Impl> impl;
