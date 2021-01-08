@@ -39,5 +39,6 @@ void DmwViewer::onDataSetUpdated(DmwModel const & model) {
     if (maybeDataSet != nullptr) {
         setDataSet(maybeDataSet);
         renderer->ResetCamera();
+        renderWindow->Render();
     }
 }
