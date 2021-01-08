@@ -14,6 +14,8 @@ using std::make_unique;
 DmwApplication::DmwApplication(int argc, char ** argv)
 : qApplication(nullptr)
 {
+    // TODO: Move everything from constructor to `exec()` method. Constructor should stay empty.
+
     // Taken from VTK example "vtk/Examples/Gui/Qt/SimpleView"
     // needed to ensure appropriate OpenGL context is created for VTK rendering.
     // ! This call must be done before construction of QApplication (see docs of QSurfaceFormat::setDefaultFormat())

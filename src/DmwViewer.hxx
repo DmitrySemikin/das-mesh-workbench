@@ -22,6 +22,9 @@ public:
     void onDataSetUpdated(DmwModel const & model);
 
 private:
+    void resetCamera();
+
+private:
     vtkSmartPointer<vtkDataSet> dataSet;
     vtkSmartPointer<vtkDataSetMapper> mapper;
     vtkSmartPointer<vtkActor> actor;

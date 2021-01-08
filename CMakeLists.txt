@@ -40,6 +40,8 @@ set (
         src/DmwMainWindow.cxx
         src/DmwModel.cxx
         src/DmwText3dGenerator.cxx
+        src/DmwText3dGeneratorActionCallback.cxx
+        src/DmwText3dGeneratorGui.cxx
         src/DmwViewer.cxx
 )
 
@@ -52,12 +54,15 @@ set (
         src/DmwMainWindow.hxx
         src/DmwModel.hxx
         src/DmwText3dGenerator.hxx
+        src/DmwText3dGeneratorActionCallback.hxx
+        src/DmwText3dGeneratorGui.hxx
         src/DmwViewer.hxx
 )
 
 set (
     UIS
         src/DmwMainWindow.ui
+        src/DmwText3dGeneratorGui.ui
 )
 
 set (

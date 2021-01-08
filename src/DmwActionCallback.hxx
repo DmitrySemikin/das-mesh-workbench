@@ -9,7 +9,7 @@ class DmwActionCallback : public QObject {
 
 public slots:
     // Maybe we will need to add non-const version of action callback
-    virtual void call() const = 0;
+    virtual void call() = 0;
 
 };
 

@@ -5,6 +5,7 @@
 
 class DmwGuiKernel;
 class DmwModel;
+class DmwText3dGenerator;
 class DmwViewer;
 
 class DmwKernel {
@@ -18,7 +19,8 @@ public:
 private:
     std::shared_ptr<DmwViewer> viewer;
     std::unique_ptr<DmwGuiKernel> guiKernel;
-    std::unique_ptr<DmwModel> model;
+    std::shared_ptr<DmwModel> model;
+    std::unique_ptr<DmwText3dGenerator> text3DGenerator;
 };
 
 

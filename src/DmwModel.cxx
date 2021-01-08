@@ -1,6 +1,9 @@
 #include <memory>
 
-#include "vtkDataSet.h"
+#include <vtkDataSet.h>
+#include <vtkNew.h>
+#include <vtkSmartPointer.h>
+#include <vtkUnstructuredGrid.h>
 
 #include "DmwViewer.hxx"
 
@@ -10,7 +13,7 @@ using std::shared_ptr;
 
 DmwModel::DmwModel()
 : maybeViewer(), // nullptr
-  maybeDataSet(nullptr)
+  maybeDataSet(vtkNew<vtkUnstructuredGrid>())
 {
     // Nothing to do here
 }

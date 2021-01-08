@@ -38,5 +38,6 @@ void DmwViewer::onDataSetUpdated(DmwModel const & model) {
     vtkSmartPointer<vtkDataSet> maybeDataSet = model.getMaybeDataSet();
     if (maybeDataSet != nullptr) {
         setDataSet(maybeDataSet);
+        renderer->ResetCamera();
     }
 }

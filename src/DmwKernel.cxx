@@ -16,15 +16,14 @@ using std::make_unique;
 DmwKernel::DmwKernel()
 : viewer(make_shared<DmwViewer>()),
   guiKernel(make_unique<DmwGuiKernel>()),
-  model(make_unique<DmwModel>())
+  model(make_shared<DmwModel>()),
+  text3DGenerator(make_unique<DmwText3dGenerator>(model))
 {
-    DmwText3dGenerator text3DGenerator;
-    vtkSmartPointer<vtkPolyData> textPolyData = text3DGenerator.generate3dText("Hi there!");
-
     model->setViewer(viewer);
-    model->setDataSet(textPolyData);
 
     guiKernel->setViewerRenderWindow(viewer->getRenderWindow());
+
+    guiKernel->registerAction(text3DGenerator->getActionCallback(), "Make 3D Text");
 }
 
 DmwKernel::~DmwKernel() noexcept {
@@ -32,5 +31,6 @@ DmwKernel::~DmwKernel() noexcept {
 }
 
 void DmwKernel::showMainWindow() {
+    // TODO: Theoretically we can show main window in the constructor. There is no really much use in separate method for it.
     guiKernel->showMainWindow();
 }
