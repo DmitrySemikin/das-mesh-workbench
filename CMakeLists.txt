@@ -5,6 +5,7 @@ find_package(
     VTK
     COMPONENTS
         CommonCore
+        CommonColor
         GUISupportQt
         ViewsQt
         RenderingFreeType
@@ -38,6 +39,7 @@ set (
         src/DmwGuiKernel.cxx
         src/DmwKernel.cxx
         src/DmwMainWindow.cxx
+        src/DmwMeshActionGenerateSampleUnstructuredGrid.cxx
         src/DmwModel.cxx
         src/DmwText3dGenerator.cxx
         src/DmwText3dGeneratorActionCallback.cxx
@@ -52,6 +54,7 @@ set (
         src/DmwGuiKernel.hxx
         src/DmwKernel.hxx
         src/DmwMainWindow.hxx
+        src/DmwMeshActionGenerateSampleUnstructuredGrid.hxx
         src/DmwModel.hxx
         src/DmwText3dGenerator.hxx
         src/DmwText3dGeneratorActionCallback.hxx
