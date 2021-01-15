@@ -1,9 +1,9 @@
-#ifndef DmwActionCallback_hxx
-#define DmwActionCallback_hxx
+#ifndef DmwMeshAction_hxx
+#define DmwMeshAction_hxx
 
 #include <QObject>
 
-class DmwActionCallback : public QObject {
+class DmwMeshAction : public QObject {
 
     Q_OBJECT
 
@@ -13,4 +13,4 @@ public slots:
 
 };
 
-#endif //DmwActionCallback_hxx
+#endif //DmwMeshAction_hxx

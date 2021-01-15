@@ -5,16 +5,16 @@
 
 #include <vtkSmartPointer.h>
 
-#include "DmwActionCallback.hxx"
+#include "DmwMeshAction.hxx"
 
 class vtkPolyData;
 
-class DmwActionCallback;
+class DmwMeshAction;
 class DmwModel;
 class DmwText3dGeneratorGui;
 
 class DmwText3dGenerator :
-        public DmwActionCallback
+        public DmwMeshAction
 {
 
     Q_OBJECT

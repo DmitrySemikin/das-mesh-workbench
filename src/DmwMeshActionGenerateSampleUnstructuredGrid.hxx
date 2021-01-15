@@ -3,12 +3,12 @@
 
 #include <memory>
 
-#include "DmwActionCallback.hxx"
+#include "DmwMeshAction.hxx"
 
 class DmwModel;
 
 class DmwMeshActionGenerateSampleUnstructuredGrid :
-        public DmwActionCallback
+        public DmwMeshAction
 {
     Q_OBJECT
 

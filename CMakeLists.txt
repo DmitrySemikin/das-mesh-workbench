@@ -48,11 +48,11 @@ set (
 
 set (
     HEADERS
-        src/DmwActionCallback.hxx
         src/DmwApplication.hxx
         src/DmwGuiKernel.hxx
         src/DmwKernel.hxx
         src/DmwMainWindow.hxx
+        src/DmwMeshAction.hxx
         src/DmwMeshActionGenerateSampleUnstructuredGrid.hxx
         src/DmwModel.hxx
         src/DmwText3dGenerator.hxx
