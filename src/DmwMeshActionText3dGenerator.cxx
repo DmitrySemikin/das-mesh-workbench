@@ -7,9 +7,9 @@
 #include <vtkVectorText.h>
 
 #include "DmwModel.hxx"
-#include "DmwText3dGeneratorGui.hxx"
+#include "DmwMeshActionText3dGeneratorGui.hxx"
 
-#include "DmwText3dGenerator.hxx"
+#include "DmwMeshActionText3dGenerator.hxx"
 
 
 
@@ -21,18 +21,18 @@ using std::unique_ptr;
 
 
 
-DmwText3dGenerator::DmwText3dGenerator(shared_ptr<DmwModel> model)
+DmwMeshActionText3dGenerator::DmwMeshActionText3dGenerator(shared_ptr<DmwModel> model)
 : model(model),
   dialog(nullptr)
 {
     // Nothing to do here
 }
 
-DmwText3dGenerator::~DmwText3dGenerator() noexcept {
+DmwMeshActionText3dGenerator::~DmwMeshActionText3dGenerator() noexcept {
     // Nothing to do here
 }
 
-vtkSmartPointer<vtkPolyData> DmwText3dGenerator::generate3dText(const char *const text) const {
+vtkSmartPointer<vtkPolyData> DmwMeshActionText3dGenerator::generate3dText(const char *const text) const {
     vtkNew<vtkVectorText> vectorText;
     vectorText->SetText(text);
     // TODO: How to specify coordinates? Or probably we can offset it after creation.
@@ -55,15 +55,15 @@ vtkSmartPointer<vtkPolyData> DmwText3dGenerator::generate3dText(const char *cons
     return polyData;
 }
 
-void DmwText3dGenerator::generate3dTextWithGuiAndUpdateModel() {
+void DmwMeshActionText3dGenerator::generate3dTextWithGuiAndUpdateModel() {
     if (dialog == nullptr) {
-        dialog = make_unique<DmwText3dGeneratorGui>();
-        dialog->connect(dialog.get(), &QDialog::finished, this, &DmwText3dGenerator::onDialogFinished);
+        dialog = make_unique<DmwMeshActionText3dGeneratorGui>();
+        dialog->connect(dialog.get(), &QDialog::finished, this, &DmwMeshActionText3dGenerator::onDialogFinished);
         dialog->open();
     }
 }
 
-void DmwText3dGenerator::onDialogFinished(int result) {
+void DmwMeshActionText3dGenerator::onDialogFinished(int result) {
     if (result == (int)QDialog::DialogCode::Accepted && dialog != nullptr) {
         const string text = dialog->getText();
         vtkSmartPointer<vtkDataSet> textDataSet = generate3dText(text.c_str());
@@ -72,6 +72,6 @@ void DmwText3dGenerator::onDialogFinished(int result) {
     dialog.reset();
 }
 
-void DmwText3dGenerator::call() {
+void DmwMeshActionText3dGenerator::call() {
     generate3dTextWithGuiAndUpdateModel();
 }

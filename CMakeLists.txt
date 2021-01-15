@@ -40,9 +40,9 @@ set (
         src/DmwKernel.cxx
         src/DmwMainWindow.cxx
         src/DmwMeshActionGenerateSampleUnstructuredGrid.cxx
+        src/DmwMeshActionText3dGenerator.cxx
+        src/DmwMeshActionText3dGeneratorGui.cxx
         src/DmwModel.cxx
-        src/DmwText3dGenerator.cxx
-        src/DmwText3dGeneratorGui.cxx
         src/DmwViewer.cxx
 )
 
@@ -54,16 +54,16 @@ set (
         src/DmwMainWindow.hxx
         src/DmwMeshAction.hxx
         src/DmwMeshActionGenerateSampleUnstructuredGrid.hxx
+        src/DmwMeshActionText3dGenerator.hxx
+        src/DmwMeshActionText3dGeneratorGui.hxx
         src/DmwModel.hxx
-        src/DmwText3dGenerator.hxx
-        src/DmwText3dGeneratorGui.hxx
         src/DmwViewer.hxx
 )
 
 set (
     UIS
         src/DmwMainWindow.ui
-        src/DmwText3dGeneratorGui.ui
+        src/DmwMeshActionText3dGeneratorGui.ui
 )
 
 set (

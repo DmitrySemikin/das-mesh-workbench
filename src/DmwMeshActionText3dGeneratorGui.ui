@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DmwText3dGeneratorGui</class>
- <widget class="QDialog" name="DmwText3dGeneratorGui">
+ <class>DmwMeshActionText3dGeneratorGui</class>
+ <widget class="QDialog" name="DmwMeshActionText3dGeneratorGui">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -89,7 +89,7 @@
   <connection>
    <sender>buttonOk</sender>
    <signal>clicked()</signal>
-   <receiver>DmwText3dGeneratorGui</receiver>
+   <receiver>DmwMeshActionText3dGeneratorGui</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -105,7 +105,7 @@
   <connection>
    <sender>buttonCancel</sender>
    <signal>clicked()</signal>
-   <receiver>DmwText3dGeneratorGui</receiver>
+   <receiver>DmwMeshActionText3dGeneratorGui</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

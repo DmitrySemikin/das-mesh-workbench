@@ -1,5 +1,5 @@
-#ifndef DmwText3dGenerator_hxx
-#define DmwText3dGenerator_hxx
+#ifndef DmwMeshActionText3dGenerator_hxx
+#define DmwMeshActionText3dGenerator_hxx
 
 #include <memory>
 
@@ -11,17 +11,17 @@ class vtkPolyData;
 
 class DmwMeshAction;
 class DmwModel;
-class DmwText3dGeneratorGui;
+class DmwMeshActionText3dGeneratorGui;
 
-class DmwText3dGenerator :
+class DmwMeshActionText3dGenerator :
         public DmwMeshAction
 {
 
     Q_OBJECT
 
 public:
-    explicit DmwText3dGenerator(std::shared_ptr<DmwModel> model);
-    ~DmwText3dGenerator() noexcept override;
+    explicit DmwMeshActionText3dGenerator(std::shared_ptr<DmwModel> model);
+    ~DmwMeshActionText3dGenerator() noexcept override;
 
 public slots:
     virtual void call() override;
@@ -36,8 +36,8 @@ private:
 
 private:
     std::shared_ptr<DmwModel> model;
-    std::unique_ptr<DmwText3dGeneratorGui> dialog;
+    std::unique_ptr<DmwMeshActionText3dGeneratorGui> dialog;
 
 };
 
-#endif //DmwText3dGenerator_hxx
+#endif //DmwMeshActionText3dGenerator_hxx

@@ -5,7 +5,7 @@
 #include "DmwGuiKernel.hxx"
 #include "DmwMeshActionGenerateSampleUnstructuredGrid.hxx"
 #include "DmwModel.hxx"
-#include "DmwText3dGenerator.hxx"
+#include "DmwMeshActionText3dGenerator.hxx"
 #include "DmwViewer.hxx"
 
 #include "DmwKernel.hxx"
@@ -23,7 +23,7 @@ DmwKernel::DmwKernel()
 
     guiKernel->setViewerRenderWindow(viewer->getRenderWindow());
 
-    shared_ptr<DmwText3dGenerator> text3DGenerator = make_shared<DmwText3dGenerator>(model);
+    shared_ptr<DmwMeshActionText3dGenerator> text3DGenerator = make_shared<DmwMeshActionText3dGenerator>(model);
     guiKernel->registerAction(text3DGenerator, "Make 3D Text");
 
     shared_ptr<DmwMeshActionGenerateSampleUnstructuredGrid> generateSampleUnstructuredGrid = make_shared<DmwMeshActionGenerateSampleUnstructuredGrid>(model);
