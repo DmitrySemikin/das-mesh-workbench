@@ -42,7 +42,6 @@ set (
         src/DmwMeshActionGenerateSampleUnstructuredGrid.cxx
         src/DmwModel.cxx
         src/DmwText3dGenerator.cxx
-        src/DmwText3dGeneratorActionCallback.cxx
         src/DmwText3dGeneratorGui.cxx
         src/DmwViewer.cxx
 )
@@ -57,7 +56,6 @@ set (
         src/DmwMeshActionGenerateSampleUnstructuredGrid.hxx
         src/DmwModel.hxx
         src/DmwText3dGenerator.hxx
-        src/DmwText3dGeneratorActionCallback.hxx
         src/DmwText3dGeneratorGui.hxx
         src/DmwViewer.hxx
 )

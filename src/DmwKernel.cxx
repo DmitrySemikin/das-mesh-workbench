@@ -17,14 +17,14 @@ using std::shared_ptr;
 DmwKernel::DmwKernel()
 : viewer(make_shared<DmwViewer>()),
   guiKernel(make_unique<DmwGuiKernel>()),
-  model(make_shared<DmwModel>()),
-  text3DGenerator(make_unique<DmwText3dGenerator>(model))
+  model(make_shared<DmwModel>())
 {
     model->setViewer(viewer);
 
     guiKernel->setViewerRenderWindow(viewer->getRenderWindow());
 
-    guiKernel->registerAction(text3DGenerator->getActionCallback(), "Make 3D Text");
+    shared_ptr<DmwText3dGenerator> text3DGenerator = make_shared<DmwText3dGenerator>(model);
+    guiKernel->registerAction(text3DGenerator, "Make 3D Text");
 
     shared_ptr<DmwMeshActionGenerateSampleUnstructuredGrid> generateSampleUnstructuredGrid = make_shared<DmwMeshActionGenerateSampleUnstructuredGrid>(model);
     guiKernel->registerAction(generateSampleUnstructuredGrid, "Generate Sample Unstructured Grid");

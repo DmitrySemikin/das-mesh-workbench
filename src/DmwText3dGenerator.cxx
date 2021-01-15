@@ -1,16 +1,12 @@
 #include <memory>
 #include <string>
 
-#include <QObject>
-
 #include <vtkElevationFilter.h>
 #include <vtkNew.h>
 #include <vtkSmartPointer.h>
 #include <vtkVectorText.h>
 
-#include "DmwActionCallback.hxx"
 #include "DmwModel.hxx"
-#include "DmwText3dGeneratorActionCallback.hxx"
 #include "DmwText3dGeneratorGui.hxx"
 
 #include "DmwText3dGenerator.hxx"
@@ -27,8 +23,7 @@ using std::unique_ptr;
 
 DmwText3dGenerator::DmwText3dGenerator(shared_ptr<DmwModel> model)
 : model(model),
-  dialog(nullptr),
-  callback(make_shared<DmwText3dGeneratorActionCallback>(*this))
+  dialog(nullptr)
 {
     // Nothing to do here
 }
@@ -60,10 +55,6 @@ vtkSmartPointer<vtkPolyData> DmwText3dGenerator::generate3dText(const char *cons
     return polyData;
 }
 
-std::shared_ptr<const DmwActionCallback> DmwText3dGenerator::getActionCallback() const {
-    return callback;
-}
-
 void DmwText3dGenerator::generate3dTextWithGuiAndUpdateModel() {
     if (dialog == nullptr) {
         dialog = make_unique<DmwText3dGeneratorGui>();
@@ -79,4 +70,8 @@ void DmwText3dGenerator::onDialogFinished(int result) {
         model->setDataSet(textDataSet);
     }
     dialog.reset();
+}
+
+void DmwText3dGenerator::call() {
+    generate3dTextWithGuiAndUpdateModel();
 }
