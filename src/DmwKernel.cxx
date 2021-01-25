@@ -4,8 +4,9 @@
 
 #include "DmwGuiKernel.hxx"
 #include "DmwMeshActionGenerateSampleUnstructuredGrid.hxx"
-#include "DmwModel.hxx"
+#include "DmwMeshActionImportSalomeDatFile.hxx"
 #include "DmwMeshActionText3dGenerator.hxx"
+#include "DmwModel.hxx"
 #include "DmwViewer.hxx"
 
 #include "DmwKernel.hxx"
@@ -28,6 +29,9 @@ DmwKernel::DmwKernel()
 
     shared_ptr<DmwMeshActionGenerateSampleUnstructuredGrid> generateSampleUnstructuredGrid = make_shared<DmwMeshActionGenerateSampleUnstructuredGrid>(model);
     guiKernel->registerAction(generateSampleUnstructuredGrid, "Generate Sample Unstructured Grid");
+
+    shared_ptr<DmwMeshActionImportSalomeDatFile> importSalomeDatFile = make_shared<DmwMeshActionImportSalomeDatFile>(model);
+    guiKernel->registerAction(importSalomeDatFile, "Import Salome DAT file");
 }
 
 DmwKernel::~DmwKernel() noexcept {

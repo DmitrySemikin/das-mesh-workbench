@@ -40,6 +40,7 @@ set (
         src/DmwKernel.cxx
         src/DmwMainWindow.cxx
         src/DmwMeshActionGenerateSampleUnstructuredGrid.cxx
+        src/DmwMeshActionImportSalomeDatFile.cxx
         src/DmwMeshActionText3dGenerator.cxx
         src/DmwMeshActionText3dGeneratorGui.cxx
         src/DmwModel.cxx
@@ -54,6 +55,7 @@ set (
         src/DmwMainWindow.hxx
         src/DmwMeshAction.hxx
         src/DmwMeshActionGenerateSampleUnstructuredGrid.hxx
+        src/DmwMeshActionImportSalomeDatFile.hxx
         src/DmwMeshActionText3dGenerator.hxx
         src/DmwMeshActionText3dGeneratorGui.hxx
         src/DmwModel.hxx
