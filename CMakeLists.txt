@@ -44,6 +44,7 @@ set (
         src/DmwMeshActionText3dGenerator.cxx
         src/DmwMeshActionText3dGeneratorGui.cxx
         src/DmwMeshChunk.cxx
+        src/DmwMeshChunkVisual.cxx
         src/DmwModel.cxx
         src/DmwViewer.cxx
 )
@@ -60,6 +61,7 @@ set (
         src/DmwMeshActionText3dGenerator.hxx
         src/DmwMeshActionText3dGeneratorGui.hxx
         src/DmwMeshChunk.hxx
+        src/DmwMeshChunkVisual.hxx
         src/DmwModel.hxx
         src/DmwViewer.hxx
 )
