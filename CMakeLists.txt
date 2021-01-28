@@ -43,6 +43,7 @@ set (
         src/DmwMeshActionImportSalomeDatFile.cxx
         src/DmwMeshActionText3dGenerator.cxx
         src/DmwMeshActionText3dGeneratorGui.cxx
+        src/DmwMeshChunk.cxx
         src/DmwModel.cxx
         src/DmwViewer.cxx
 )
@@ -58,6 +59,7 @@ set (
         src/DmwMeshActionImportSalomeDatFile.hxx
         src/DmwMeshActionText3dGenerator.hxx
         src/DmwMeshActionText3dGeneratorGui.hxx
+        src/DmwMeshChunk.hxx
         src/DmwModel.hxx
         src/DmwViewer.hxx
 )
